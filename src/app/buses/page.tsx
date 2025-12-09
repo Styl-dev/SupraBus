@@ -13,6 +13,9 @@ import { getBuses } from "@/lib/actions/buses";
 import { formatDate } from "@/lib/utils";
 import { Plus } from "lucide-react";
 
+// Force dynamic rendering for Vercel deployment
+export const dynamic = 'force-dynamic';
+
 const statusVariants = {
   active: "success",
   maintenance: "warning",

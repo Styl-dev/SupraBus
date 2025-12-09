@@ -7,6 +7,9 @@ import { getDriverStats } from "@/lib/actions/drivers";
 import { getRouteStats } from "@/lib/actions/routes";
 import { Bus, Users, MapPin, Route } from "lucide-react";
 
+// Force dynamic rendering for Vercel deployment
+export const dynamic = 'force-dynamic';
+
 export default async function DashboardPage() {
   const [busStats, driverStats, routeStats] = await Promise.all([
     getBusStats(),

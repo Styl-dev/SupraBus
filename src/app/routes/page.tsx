@@ -12,6 +12,9 @@ import {
 import { getRoutes } from "@/lib/actions/routes";
 import { Plus } from "lucide-react";
 
+// Force dynamic rendering for Vercel deployment
+export const dynamic = 'force-dynamic';
+
 const statusVariants = {
   active: "success",
   suspended: "warning",

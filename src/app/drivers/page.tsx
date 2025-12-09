@@ -13,6 +13,9 @@ import { getDrivers } from "@/lib/actions/drivers";
 import { formatDate } from "@/lib/utils";
 import { Plus } from "lucide-react";
 
+// Force dynamic rendering for Vercel deployment
+export const dynamic = 'force-dynamic';
+
 const statusVariants = {
   available: "success",
   on_duty: "warning",
