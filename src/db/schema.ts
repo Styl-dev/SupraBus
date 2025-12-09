@@ -1,8 +1,8 @@
 import { sql } from "drizzle-orm";
-import { integer, real, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { pgTable, serial, text, integer, real, timestamp } from "drizzle-orm/pg-core";
 
-export const buses = sqliteTable("buses", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const buses = pgTable("buses", {
+  id: serial("id").primaryKey(),
   plateNumber: text("plate_number").notNull().unique(),
   model: text("model").notNull(),
   capacity: integer("capacity").notNull(),
@@ -12,12 +12,12 @@ export const buses = sqliteTable("buses", {
     .default("active"),
   mileage: integer("mileage").notNull().default(0),
   lastMaintenanceDate: text("last_maintenance_date"),
-  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
-  updatedAt: text("updated_at").default(sql`CURRENT_TIMESTAMP`),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
 });
 
-export const drivers = sqliteTable("drivers", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const drivers = pgTable("drivers", {
+  id: serial("id").primaryKey(),
   name: text("name").notNull(),
   licenseNumber: text("license_number").notNull().unique(),
   phone: text("phone").notNull(),
@@ -30,12 +30,12 @@ export const drivers = sqliteTable("drivers", {
   hireDate: text("hire_date").notNull(),
   totalTrips: integer("total_trips").notNull().default(0),
   rating: real("rating").notNull().default(5.0),
-  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
-  updatedAt: text("updated_at").default(sql`CURRENT_TIMESTAMP`),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
 });
 
-export const routes = sqliteTable("routes", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const routes = pgTable("routes", {
+  id: serial("id").primaryKey(),
   name: text("name").notNull(),
   origin: text("origin").notNull(),
   destination: text("destination").notNull(),
@@ -46,8 +46,8 @@ export const routes = sqliteTable("routes", {
     .default("active"),
   frequencyPerDay: integer("frequency_per_day").notNull().default(1),
   fare: real("fare").notNull(),
-  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
-  updatedAt: text("updated_at").default(sql`CURRENT_TIMESTAMP`),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
 });
 
 // TypeScript types
