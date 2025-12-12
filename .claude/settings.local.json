@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm install:*)",
+      "Bash(rm:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm add:*)",
+      "Bash(timeout 10 pnpm dev:*)",
+      "Bash(timeout 15 pnpm dev:*)",
+      "Bash(echo:*)",
+      "Bash(NODE_ENV=production pnpm build:*)",
+      "Bash(npx next build:*)",
+      "Bash(NODE_ENV=production npx next build:*)",
+      "Bash(pnpm seed:*)",
+      "Bash(env)",
+      "Bash(ls:*)",
+      "Bash(npm config list:*)",
+      "Bash(cat:*)",
+      "Bash(printenv:*)",
+      "Bash(grep:*)",
+      "Bash(npm:*)",
+      "Bash(claude mcp remove:*)",
+      "Bash(claude mcp add-json:*)",
+      "Bash(claude mcp list:*)",
+      "Bash(claude mcp get:*)",
+      "Bash(cmd /c npx -y @anthropic/mcp-server-puppeteer --help)",
+      "Bash(where npx:*)",
+      "Bash(cmd /c \"pnpm dev\")",
+      "Bash(taskkill:*)",
+      "Bash(cmd /c \"taskkill /F /IM node.exe\")",
+      "Bash(git remote add:*)",
+      "Bash(winget install:*)",
+      "Bash(git add:*)",
+      "Bash(dir:*)"
+    ]
+  }
+}

@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Payload Boilerplate
+
+A modern fullstack boilerplate for rapid project development with Next.js 16, Payload CMS 3, and cutting-edge tooling.
+
+## Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org/)
+- **CMS/Backend:** [Payload CMS 3](https://payloadcms.com/)
+- **Database:** MongoDB
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/)
+- **Data Fetching:** [TanStack Query (React Query)](https://tanstack.com/query)
+- **Email:** [Resend](https://resend.com/) (via Payload plugin)
+- **Payments:** [Stripe](https://stripe.com/) (via Payload plugin)
+- **Code Quality:** ESLint, Prettier, TypeScript
+- **Git Hooks:** simple-git-hooks + lint-staged
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+
+- pnpm
+- MongoDB instance (local or cloud)
+
+### Installation
+
+1. Clone the repository
+2. Copy environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+3. Update `.env` with your values
+4. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+5. Start the development server:
+   ```bash
+   pnpm dev
+   ```
+
+The app will be available at `http://localhost:3000`.
+Payload Admin panel: `http://localhost:3000/admin`
+
+## Scripts
+
+| Script              | Description               |
+| ------------------- | ------------------------- |
+| `pnpm dev`          | Start development server  |
+| `pnpm build`        | Build for production      |
+| `pnpm start`        | Start production server   |
+| `pnpm lint`         | Run ESLint                |
+| `pnpm lint:fix`     | Fix ESLint errors         |
+| `pnpm format`       | Format code with Prettier |
+| `pnpm format:check` | Check code formatting     |
+| `pnpm typecheck`    | Run TypeScript type check |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── (payload)/        # Payload CMS routes (admin, API)
+│   └── ...               # Your app routes
+├── collections/          # Payload CMS collections
+├── lib/                  # Utility functions
+└── providers/            # React context providers
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+See `.env.example` for all required environment variables.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## MCP Servers (Claude Code)
 
-## Learn More
+This project is configured with the following MCP servers for enhanced AI development:
 
-To learn more about Next.js, take a look at the following resources:
+- **Context7** - Latest documentation for any library
+- **Playwright** - Browser automation & screenshots
+- **shadcn/ui** - Component access
+- **React Bits** - Animated React components
+- **Railway** - Deployment management
+- **Next.js Docs** - Documentation lookup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
